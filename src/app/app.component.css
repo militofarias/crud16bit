@@ -1,0 +1,39 @@
+#form-nome {
+
+	width: 300px;
+}
+
+#form-tamP {
+
+	width: 50px;
+}
+
+#form-tamM {
+
+	width: 50px;
+}
+
+#form-tamG {
+
+	width: 50px;
+}
+
+#form-tamGG {
+
+	width: 50px;
+}
+
+#tabLinha {
+	border: 20px;
+}
+
+#tabItem {
+	text-align: center;
+	width: 70px;
+	border: 20px;
+}
+
+#tabNome {
+	text-align: center;
+	width: 250px;
+}

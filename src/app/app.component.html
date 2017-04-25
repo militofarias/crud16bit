@@ -1,3 +1,58 @@
-<h1>
-  {{title}}
-</h1>
+<section class="camisetas">
+  <header class="header">
+    <link rel="stylesheet"
+      href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+
+    <h1>Camisetas 16-bit</h1>
+  </header>
+  <body>
+    <form>
+      <div class="form-group">
+        <label for="dados">Digite o nome e as quantidades de cada tamanho para inserir ou atualizar estampa:</label>
+        <table>
+          <tr>
+            <td>
+              <input class="form-control" type="text" id="form-nome" placeholder="Nome da Estampa" required #arte/>      
+              <!--select class="form-control" id="estampa" required id='form-nome'>
+                <option *ngFor="let arte of estampas" [value]="arte">{{arte}}</option>
+              </select-->
+            </td>
+            <td><input class="form-control" type="text" id="form-tamP" placeholder="P" required #pInput/></td>
+            <td><input class="form-control" type="text" id="form-tamM" placeholder="M" required #mInput/></td>
+            <td><input class="form-control" type="text" id="form-tamG" placeholder="G" required #gInput/></td>
+            <td><input class="form-control" type="text" id="form-tamGG" placeholder="GG" required #ggInput/></td>
+          </tr>  
+        </table>
+        <button (click)="addCamiseta(arte.value,
+                            pInput.value,
+                            mInput.value,
+                            gInput.value,
+                            ggInput.value)"
+              class="btn btn-send">Inserir</button>
+      </div>   
+    </form>   
+    <div class="form-group" *ngIf="getTodasCamisetas().length > 0">
+      <label>Camisas adicionadas:</label>
+      <table><tr>
+        <td id="tabItem"><label>ID</label></td>
+        <td id="tabNome"><label>Estampa</label></td>
+        <td id="tabItem"><label>Tam. P</label></td>
+        <td id="tabItem"><label>Tam. M</label></td>
+        <td id="tabItem"><label>Tam. G</label></td>
+        <td id="tabItem"><label>Tam. GG</label></td>
+      </tr></table>
+      <table *ngFor="let item of getTodasCamisetas()">
+        <tr id="tabLinha">
+          <td id="tabItem">{{ item.id }}</td>
+          <td id="tabNome">{{ item.nome }}</td>
+          <td id="tabItem">{{ item.tamP }}</td>
+          <td id="tabItem">{{ item.tamM }}</td>
+          <td id="tabItem">{{ item.tamG }}</td>
+          <td id="tabItem">{{ item.tamGG }}</td>
+          <button class="destroy" (click)="deleteCamiseta(item)">Excluir</button>
+        </tr>
+      </table>
+     
+    </div>
+  </body>
+</section>
