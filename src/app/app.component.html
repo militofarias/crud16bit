@@ -23,12 +23,13 @@
             <td><input class="form-control" type="text" id="form-tamGG" placeholder="GG" required #ggInput/></td>
           </tr>  
         </table>
-        <button (click)="addCamiseta(arte.value,
+        <button (click)="addCamiseta(
+                            arte.value,
                             pInput.value,
                             mInput.value,
                             gInput.value,
                             ggInput.value)"
-              class="btn btn-send" id="btnSend">Inserir</button>
+                  id="btnSend" class="btn btn-send">Inserir</button>
       </div>   
     </form>   
     <div class="form-group" *ngIf="getTodasCamisetas().length > 0">
@@ -49,7 +50,7 @@
           <td class="itens" id="tabTamM">{{ item.tamM }}</td>
           <td class="itens" id="tabTamG">{{ item.tamG }}</td>
           <td class="itens" id="tabTamGG">{{ item.tamGG }}</td>
-          <button class="destroy" (click)="deleteCamiseta(item)" id="btn-destoy">Excluir</button>
+          <button (click)="deleteCamiseta(item)" id="btn-destoy" class="destroy" >Excluir</button>
         </tr>
       </table>
      
